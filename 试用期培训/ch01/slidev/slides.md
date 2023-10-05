@@ -20,7 +20,7 @@ routerMode: hash
 # Overview
 目录
 
-<Toc />
+<Toc :maxDepth="1" />
 
 ---
 layout: center
