@@ -40,6 +40,7 @@ Web 开发技术
 
 - 网页
 - 小程序
+- 其他
 
 </v-click>
 
@@ -47,7 +48,7 @@ Web 开发技术
 
 - 移动端(quasar, maybe)
 - 桌面端(electron, maybe)
-- Linux/Serverless
+- 服务器/Serverless
 
 </v-click>
 
@@ -59,7 +60,7 @@ Web 开发技术
 
 - Python(FastAPI)
 - 数据库(SQL, ORM)
-- Linux
+- Linux服务器运维
 
 <v-click>
 
@@ -101,7 +102,7 @@ flowchart LR
   frontend-->miniapp
   subgraph miniapp [小程序]
     direction TB
-    小程序原生-->uniapp
+    微信小程序
   end
 ```
 </v-click>
@@ -121,7 +122,7 @@ flowchart LR
 <v-click>
 
 - 课上内容以路线以及常用知识点为主
-- 锻炼自学能力
+- 锻炼自学能力：寻找和阅读资料的能力
 - 大作业不难，能否通过取决于大家态度
 
 </v-click>
@@ -140,13 +141,15 @@ flowchart LR
 
 <br/>
 
-- [MDN Web Docs](https://developer.mozilla.org/en-US/)(文档，推荐英文原版)
-- [W3C](https://www.w3.org/)(标准，最权威)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)(文档，推荐英文版，中文翻译由社区维护)
+- [W3C](https://www.w3.org/)(权威标准)
 - [WangDoc](https://wangdoc.com/)(html, js 教程，建议当文档来看)
 - [廖雪峰](https://www.liaoxuefeng.com/)(教程，适合有点编程基础)
 - [阮一峰的网络日志](https://www.ruanyifeng.com/blog/)(博客，零碎知识点和技巧)
-- [RUNOOB](https://www.runoob.com/)(可以当文档来用，不怎么推荐)
-- [W3school](https://www.w3school.com.cn/)(可以当文档来用，不怎么推荐)
+- [酷壳Coolshell](https://www.coolshell.cn/)(可能永远停更了，祝愿作者一生平安)
+- [RUNOOB](https://www.runoob.com/)(简洁可以速查，里面有个菜鸟工具还蛮好用的，还有一些“小测验”)
+- [W3Cschool](https://www.w3cschool.cn/tutorial)(东西似乎比菜鸟多一点，当文档用)
+- [W3schools](https://www.w3schools.cn/)(也差不多的内容吧)
 - ... 待补充
 
 </div>
@@ -167,10 +170,11 @@ flowchart LR
 ### 社区
 
 - 学线 Web(
-- [GitHub](https://github.com/)(代码托管平台，兼有社区等功能)
+- [GitHub](https://github.com/)(代码托管平台，兼有社区等功能，如各个项目的discussion板块)
 - [StackOverflow](https://stackoverflow.com/)(找答案，提问题)
-- [稀土掘金](https://juejin.cn/)(国内技术平台)
-- [思否](https://segmentfault.com/)(国内技术平台，提问)
+- [稀土掘金](https://juejin.cn/)(国内技术平台，前端为主)
+- [思否](https://segmentfault.com/)(国内技术平台，提问，互联网行业为主)
+- 其他平台如知乎、CSDN（前者可能质量还略高）
 - 不存在的平台
 
 </div>
@@ -187,13 +191,15 @@ flowchart LR
 
 <div>
 
-### 浏览器
+### 浏览器 Browsers
 
 - Chrome(必需)
+- Microsoft Edge
 - Firefox
 - Safari
-- Opera
-- Android
+- Opera, Brave, Vivaldi
+- Internet Explorer, Netscape Navigator (元老级浏览器，早已弃用)
+- Android Webview
 - etc.
 
 </div>
@@ -202,9 +208,10 @@ flowchart LR
 
 ### IDE & 编辑器
 
+- Notepad
 - Visual Studio Code
-- WebStorm
-- (neo)vim
+- JetBrains WebStorm, PyCharm, etc.
+- Nano, Vim, Emacs, etc. 
 
 </div>
 
@@ -214,6 +221,8 @@ flowchart LR
 
 - http server
   - `python -m http.server`
+  - IIS
+  - Nginx and many more
   - etc.
 - 版本控制系统(Git)
 
@@ -231,7 +240,7 @@ flowchart LR
 
 - 你的硬盘里有一堆文件/文件夹
 - 文件夹可以包含文件或文件夹
-- 任意嵌套、有一定限制
+- 文件夹可嵌套、有一定限制
 - 通过“路径”可以描述一个文件的位置
 - 路径分为绝对路径和相对路径，相对路径又涉及到当前“工作目录”的概念
 - 文件是一堆二进制 $01$，我们可以用不同的方式去对待它
@@ -240,7 +249,7 @@ flowchart LR
 
 ### URL
 
-Uniform Resource Locators(统一资源定位符)，我们常说的网址。
+Uniform Resource Locators(统一资源定位符)。我们常说的网址就是一种HRL。
 
 <v-click>
 <UrlExample />
@@ -274,21 +283,23 @@ layout: two-cols
 
 - 我们的网站项目现阶段也是由一堆文件构成的
 - 用路径可以描述一个文件的位置
-- 路径分为绝对路径和相对路径
+- 路径分为**绝对路径**和**相对路径**
+<!--
 - 文件名分为前缀名和后缀名
-- 后缀名可作为文件类型的**标识**
+-->
+- 文件名通常会包括主名和扩展名（也称为后缀名），后者约定俗成地作为文件类型的**标识**（尤其是在Windows系统下）
 - 我们的网站结构可以参考右图
 
 <div class="mt-4"></div>
 
-### 常见后缀名
+### 常见扩展名
 
+- 图片: jpg, png, bmp, gif, ico, webp, ...
+- 视频: mp4, mkv, avi, webm, ...
+- 音频: mp3, wav, flac, ...
 - HTML: html
 - CSS: css
 - JavaScript: js
-- 图片: jpg, png, bmp, gif, ico, webp, ...
-- 视频: mp4, mkv, avi, ...
-- 音频: mp3, wav, flac, ...
 
 ::right::
 
@@ -323,10 +334,14 @@ flowchart LR
 
 背后的细节可以开一个学院。
 
+> OSI模型、协议与实现……
+
 ### 从哪里获取服务器
 
-- 试用期期间，可以把自己的电脑既当作服务器又当作客户端，本机开启一个 http server 服务写好的网页，浏览器访问本机的服务。
-- 也可以直接打开 html 后缀的文件，不过可能会出很多问题。
+> 可以直接打开 html 后缀的文件预览，不过由于浏览器安全性等的限制，可能会出很多问题。因此，需要将网页挂在服务器上面并通过网络访问。
+
+- 试用期期间，可以把自己的电脑既当作服务器又当作客户端，本机开启一个 http server 服务写好的网页，浏览器访问`localhost`的对应端口，即可访问本机的服务。
+- 购买实体设备作为服务器
 - 有许多国外云平台有学生优惠政策，可以白嫖服务器（Microsoft Azure，Digital Ocean）
 - 正常购买，国内有腾讯云、阿里云等
 - 关于部署网页后面会专门开课讲（在试用期之后）
@@ -339,11 +354,11 @@ layout: center
 
 ---
 
-编写 html 的方式：
+编写 HTML 的方式：
 
 - 打开 <https://developer.mozilla.org/zh-CN/play>，在 HTML 那一栏里输入代码。
 
-- 使用 IDE 新建并打开一个 HTML 文件，写好 HTML 文件的基本结构，再进行修改和添加内容。
+- 使用 IDE 或 文本编辑器 新建或打开一个 HTML 文件，写好 HTML 文件的基本结构，再进行修改和添加内容。
 
 ---
 clicks: 8
@@ -483,20 +498,21 @@ clicks: 5
 
 <div v-click="1">
 
-- 网页的第一个元素通常是`<!doctype>`，表示文档类型，告诉浏览器如何解析网页
+- 网页的第一个元素通常是`<!DOCTYPE>`，表示文档类型，告诉浏览器如何解析网页。
 
 </div>
 <div v-click="2">
 
 - `<html>`元素是网页的顶层容器，即元素树结构的顶层节点，也称为根元素，唯一
-  - `lang` 属性代表网页内容的默认语言
+  - `lang` 属性代表网页内容的默认语言，简中为`zh-cn`，浏览器可能会识别这个标签并产生一些效果（比如弹出翻译功能）
 
 </div>
 <div v-click="3">
 
 - `<head>`元素是一个容器元素，用于放置网页的元信息。它的内容一般不会出现在网页上
   - `<title>`元素用于指定网页的标题，会显示在浏览器窗口的标题栏
-  - `<meta>` `<link>` `<style>` `<script>` `<noscript>` `<base>`
+  - `<meta>` 元素可提供有关页面的元信息(meta-information)，比如示例中这个网页使用了 UTF-8 字符编码。这个如果不指定可能会导致浏览器显示网页为乱码。
+  - `<link>` `<style>` `<script>` `<noscript>` `<base>` etc.
 
 </div>
 <div v-click="4">
@@ -584,7 +600,7 @@ clicks: 5
 #### 文本修饰 (*)
 
 <div mt="4">
-  这些现在基本不推荐使用，用 CSS 可以达到同样修饰效果
+  这些中大部分现在基本不推荐使用，用 CSS 可以达到同样修饰效果
 </div>
 
 - `<b>` 粗体
@@ -606,7 +622,7 @@ clicks: 5
 - `<img />` 用于插入图片
   - `src` 属性指定图片的 URL
   - `alt` 属性指定图片无法显示时的替代文字
-- `<video>`(*) 用于放置视频
+- `<video>`(*) 用于放置视频，播放器因浏览器而异因此不常用
   - `src` 属性指定视频的URL
 - `<audio>`(*) 用于放置音频，用法和 `<video` 基本一致
 - `<embed>`(*) 用于嵌入外部内容
@@ -698,14 +714,14 @@ CSS 可以用来给网页加上样式。
 <p style="background-color: black; color: white; padding: 16px; border-radius: 8px">
   逸一时，<span style="color: red">误一世</span>，逸久逸久罢一龄！
 </p>
-
-CSS 最基本的一条“规则”形如 `属性: 值`，比如上面例子里的 `background-color: black` 指定了元素的背景颜色为黑色。
+<!--你是懂整活的2333-->
+CSS 最基本的一条“规则”形如 `属性: 值;`，比如上面例子里的 `background-color: black` 指定了元素的背景颜色为黑色。
 
 这样直接写在元素 `style` 属性里的样式叫做“内联样式”。
 
 ---
 
-内部样式表：
+内部样式表(称为“内嵌”)：
 
 ```html
 <style>
@@ -718,7 +734,7 @@ h1 {
 
 <hr class="my-4"/>
 
-外部样式表：
+外部样式表(称为“外联”)：
 
 <div class="grid grid-cols-2 gap-2">
 
@@ -789,7 +805,7 @@ p a {
 子代选择器，用大于号 `>` 组合两个选择器
 
 ```css
-p a {
+p > a {
   margin: 0 12px;
 }
 ```
@@ -825,7 +841,7 @@ alert("hello world"); // 会弹出一个显示 "hello world" 的对话框
 
 ```js
 function greet(name) {
-  alert("hello " + name);
+  alert("hello " + name); //  把两个字符串“拼接”在一起了，用+号表示
 }
 
 greet(myName);
@@ -839,19 +855,19 @@ greet(myName);
 
 ```js
 let b = 1;
-if(myName === "lnk") {
-  b = b + 1;
-} else if(myName === "szw0407") {
+if(myName === "lnk") { // 这个地方的三个等号是推荐的写法，表示两个东西“真的是完全相等的”
+  b = b + 1; // 将b + 1的值再次赋值给b，实际上完成了让变量b“增加”1
+} else if(myName === "szw0407") { // 在很多时候，不止一种可能性！
   b = b + 2;
-} else {
+} else {  // 其他的情况
   b = b + 3;
 }
 
-console.log(b); // 2
+console.log(b); // 输出应该是多少？可以自己运行检验一下判断对不对~
 ```
 
 - 循环语句
-
+<!--太复杂了，建议换个简单的比如1+2+3+..+100
 ```js
 // 求斐波那契数列第 20 项
 let f1 = 0, f2 = 1;
@@ -861,6 +877,16 @@ for(let i = 2; i <= 20; ++i) {
   f2 = tmp;
 }
 console.log(f2);
+```
+-->
+
+```javascript
+let sum = 0;
+for (let i = 1; i<=100; ++i) {  // i的值从1开始;i的值≤100;每执行完一次大括号内的语句i的值“增加1”
+    sum += i;  // 让sum每次“增加”i
+}
+
+console.log(sum);
 ```
 
 ---
@@ -926,11 +952,11 @@ JavaScript 教程在第三&四节课。
 :)
 
 - 用 HTML 表格制作排版你的课表，可附加样式功能。
-- （可选）猜数游戏，可自由扩展
-- （可选）井字棋，有无人机皆可，可自由扩展
+- （可选）猜数游戏，可自由扩展；
+- （可选）井字棋，有无人机皆可，可自由扩展；
 - 有其他想做的也可以交流交流 🥰
 
-DDL 下周日 23:00，打包压缩文件并通过邮箱 lnkkerst04@gmail.com 或者直接 QQ 似发给我。
+DDL 下周日 23:00，打包压缩文件并通过邮箱 [xls-0nlineTek@hotmail.com](mailto:xls-0nlinetek@hotmail.com) 或者直接 QQ 发给群内头衔为“培训负责”的管理员。
 
 <v-click>
 
